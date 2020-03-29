@@ -1,0 +1,55 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{apacite}
+\usepackage{ntheorem}
+\newtheorem{hyp}{Hypothesis}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{
+	Kho, Lee\\
+	\textit{ltk224}
+	\and
+	Peeters, Jonas\\
+	\textit{jp5642}
+}
+\title{DS-GA 1013: Project\\Intelligible Principal Component Analysis}
+
+\usepackage[strings]{underscore}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{DS-GS 1013}
+\lhead{Kho \& Peeters}
+\chead{\thepage}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+\maketitle
+
+We want to research different methods of retrieving intelligible principal components when looking at gene expressions. We consider the sparse principal component analysis model introduced by Zou, Hastie and Tibshirani \citeyear{Zou2006} the key piece of literature for this paper. After reading our paper, the reader should be informed about the structural differences between SPCA approaches, its potential applications, and benchmarks against other methods. As an application we will perform SPCA on UC Irvine's \textit{gene expression cancer RNA-seq data set} \cite{Dua2019} and interpret its results. We have the following hypotheses we want to check.
+\begin{hyp}
+SPCA is the primus inter pares of intelligible PCA methods.\footnote{We will be looking specifically at SPCA, SCoTLASS, thresholding of loadings and normal PCA.}
+\end{hyp}
+\begin{hyp}
+SPCA is able to condense UC Irvine's \textit{gene expression cancer RNA-seq data set} to interpretable principal components revealing gene groupings.
+\end{hyp}
+
+\section*{Context}
+Jolliffe \citeyear{Jolliffe1986} introduced the ubiquitous dimension-reduction technique PCA in 1986. It has since been a staple in statistics curricula and academic research. One of the most relevant drawbacks to using principal component analysis (henceforth PCA) is the difficulty of interpreting separate principal components as they are a linear combination of all the original variables. Since its creation, several attempts have been made at making the principal components more intelligible. One of those is the rotation of some or all the components to simplify them. However, this approach is only permissible on a certain subset of components, namely those with nearly equal variance \cite{Jolliffe1989, Jolliffe1995}.\\
+
+Another approach frequently applied in order to increase the readability of the components is simply setting the loadings of variables with a small-magnitude to zero. This method could lead to misleading results for a series of reasons \cite{Cadima1995}. Vines \citeyear{Vines2000} devised a method that limits the individual loadings to $-1$, $0$ or $1$. Jolliffe, Trendafilov, and Uddin \citeyear{Jolliffe2003} introduced SCoTLASS, which is a modified PCA technique that is based on the least absolute shrinkage and selection operator (or lasso). Hence, penalizing small loadings on many different variables.\\
+
+One of the later developments is sparse PCA (henceforth SPCA) developed by Zou, Hastie and Tibshirani \citeyear{Zou2006}. Similarly to SCoTLASS this method incorporates the lasso method, but in addition, they reformulate the PCA in a regression-type optimization problem. This method achieves overall sparse loadings with limited variable overlap between the different principal components. In the years following its first publication, SPCA has been improved upon in a plethora of ways \cite{Shen2008, Journee2010}.
+
+\section*{Data set and methodology}
+The UCI's dataset contains a random extraction of gene expressions of patients with different types of tumors, such as breast, kidney, cancer, colon, lung and prostate cancer. The data set has $801$ observations and $20531$ features which makes it interesting as an SPCA test case. We will use SPCA to group different gene expressions and their effect on the development of different types of cancer. Besides SPCA, we will also apply the SCoTLASS, thresholding of loadings and normal PCA methods and compare their principal components.
+
+\pagebreak
+\bibliographystyle{apacite}
+\bibliography{references}
+\end{document}

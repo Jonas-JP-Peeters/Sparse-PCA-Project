@@ -1,0 +1,289 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Cadima%
+\ \BBA {} Jolliffe%
+}{%
+Cadima%
+\ \BBA {} Jolliffe%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+Cadima1995}
+\APACinsertmetastar {%
+Cadima1995}%
+\begin{APACrefauthors}%
+Cadima, J.%
+\BCBT {}\ \BBA {} Jolliffe, I\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Loading and correlations in the interpretation of
+  principle compenents} {Loading and correlations in the interpretation of
+  principle compenents}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Applied Statistics}{22}{2}{203--214}.
+\newblock
+\begin{APACrefDOI} \doi{10.1080/757584614} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dua%
+\ \BBA {} Graff%
+}{%
+Dua%
+\ \BBA {} Graff%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Dua2019}
+\APACinsertmetastar {%
+Dua2019}%
+\begin{APACrefauthors}%
+Dua, D.%
+\BCBT {}\ \BBA {} Graff, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {{UCI} Machine Learning Repository.} {{UCI} machine learning
+  repository.}
+\newblock
+\begin{APACrefURL} \url{http://archive.ics.uci.edu/ml} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jolliffe%
+}{%
+Jolliffe%
+}{%
+{\protect \APACyear {1986}}%
+}]{%
+Jolliffe1986}
+\APACinsertmetastar {%
+Jolliffe1986}%
+\begin{APACrefauthors}%
+Jolliffe, I\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Principal Components in Regression Analysis} {Principal
+  components in regression analysis}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Principal Component Analysis} {Principal component
+  analysis}\ (\BPGS\ 129--155).
+\newblock
+\APACaddressPublisher{New York, NY}{Springer New York}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1007/978-1-4757-1904-8_8}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-1-4757-1904-8_8} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jolliffe%
+}{%
+Jolliffe%
+}{%
+{\protect \APACyear {1989}}%
+}]{%
+Jolliffe1989}
+\APACinsertmetastar {%
+Jolliffe1989}%
+\begin{APACrefauthors}%
+Jolliffe, I\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1989}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Rotation of Iii-Defined Principal Components} {Rotation
+  of iii-defined principal components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series C
+  (Applied Statistics)}{38}{1}{139--147}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jolliffe%
+}{%
+Jolliffe%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+Jolliffe1995}
+\APACinsertmetastar {%
+Jolliffe1995}%
+\begin{APACrefauthors}%
+Jolliffe, I\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Rotation of principal components: choice of
+  normalization constraints} {Rotation of principal components: choice of
+  normalization constraints}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Applied Statistics}{22}{1}{29-35}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1080/757584395} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1080/757584395} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jolliffe%
+, Trendafilov%
+\BCBL {}\ \BBA {} Uddin%
+}{%
+Jolliffe%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2003}}%
+}]{%
+Jolliffe2003}
+\APACinsertmetastar {%
+Jolliffe2003}%
+\begin{APACrefauthors}%
+Jolliffe, I\BPBI T.%
+, Trendafilov, N\BPBI T.%
+\BCBL {}\ \BBA {} Uddin, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Modified Principal Component Technique Based on the
+  {LASSO}} {A modified principal component technique based on the
+  {LASSO}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational and Graphical
+  Statistics}{12}{3}{531--547}.
+\newblock
+\begin{APACrefDOI} \doi{10.1198/1061860032148} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Journ{\'e}e%
+, Nesterov%
+, Richt{\'a}rik%
+\BCBL {}\ \BBA {} Sepulchre%
+}{%
+Journ{\'e}e%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+Journee2010}
+\APACinsertmetastar {%
+Journee2010}%
+\begin{APACrefauthors}%
+Journ{\'e}e, M.%
+, Nesterov, Y.%
+, Richt{\'a}rik, P.%
+\BCBL {}\ \BBA {} Sepulchre, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Generalized power method for sparse principal component
+  analysis} {Generalized power method for sparse principal component
+  analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Machine Learning
+  Research}{11}{Feb}{517--553}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shen%
+\ \BBA {} Huang%
+}{%
+Shen%
+\ \BBA {} Huang%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+Shen2008}
+\APACinsertmetastar {%
+Shen2008}%
+\begin{APACrefauthors}%
+Shen, H.%
+\BCBT {}\ \BBA {} Huang, J\BPBI Z.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sparse principal component analysis via regularized low
+  rank matrix approximation} {Sparse principal component analysis via
+  regularized low rank matrix approximation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of multivariate analysis}{99}{6}{1015--1034}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vines%
+}{%
+Vines%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+Vines2000}
+\APACinsertmetastar {%
+Vines2000}%
+\begin{APACrefauthors}%
+Vines, S\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simple principal components} {Simple principal
+  components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series C
+  (Applied Statistics)}{49}{4}{441--451}.
+\newblock
+\begin{APACrefDOI} \doi{10.1111/1467-9876.00204} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zou%
+, Hastie%
+\BCBL {}\ \BBA {} Tibshirani%
+}{%
+Zou%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+Zou2006}
+\APACinsertmetastar {%
+Zou2006}%
+\begin{APACrefauthors}%
+Zou, H.%
+, Hastie, T.%
+\BCBL {}\ \BBA {} Tibshirani, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sparse Principal Component Analysis} {Sparse principal
+  component analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational and Graphical
+  Statistics}{15}{2}{265-286}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1198/106186006X113430}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1198/106186006X113430} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
