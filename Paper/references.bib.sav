@@ -1,0 +1,169 @@
+% Encoding: UTF-8
+
+@Article{Zou2006,
+  author    = {Hui Zou and Trevor Hastie and Robert Tibshirani},
+  title     = {Sparse Principal Component Analysis},
+  journal   = {Journal of Computational and Graphical Statistics},
+  year      = {2006},
+  volume    = {15},
+  number    = {2},
+  pages     = {265-286},
+  doi       = {10.1198/106186006X113430},
+  eprint    = {https://doi.org/10.1198/106186006X113430},
+  file      = {:Articles/Zou et al. (2006).pdf:PDF},
+  publisher = {Taylor \& Francis},
+  url       = { 
+        https://doi.org/10.1198/106186006X113430
+    
+},
+}
+
+@InBook{Jolliffe1986,
+  pages     = {129--155},
+  title     = {Principal Components in Regression Analysis},
+  publisher = {Springer New York},
+  year      = {1986},
+  author    = {Jolliffe, I. T.},
+  address   = {New York, NY},
+  isbn      = {978-1-4757-1904-8},
+  booktitle = {Principal Component Analysis},
+  doi       = {10.1007/978-1-4757-1904-8_8},
+  file      = {:Articles/Jolliffe (1986).pdf:PDF},
+  url       = {https://doi.org/10.1007/978-1-4757-1904-8_8},
+}
+
+@Article{Jolliffe1995,
+  author    = {Ian T. Jolliffe},
+  title     = {Rotation of principal components: choice of normalization constraints},
+  journal   = {Journal of Applied Statistics},
+  year      = {1995},
+  volume    = {22},
+  number    = {1},
+  pages     = {29-35},
+  doi       = {10.1080/757584395},
+  eprint    = {https://doi.org/10.1080/757584395},
+  file      = {:Articles/Jolliffe (1995).pdf:PDF},
+  publisher = {Taylor \& Francis},
+  url       = { 
+        https://doi.org/10.1080/757584395
+    
+},
+}
+
+@Article{Jolliffe1989,
+  author    = {Jolliffe, Ian T},
+  title     = {Rotation of Iii-Defined Principal Components},
+  journal   = {Journal of the Royal Statistical Society: Series C (Applied Statistics)},
+  year      = {1989},
+  volume    = {38},
+  number    = {1},
+  pages     = {139--147},
+  file      = {:Articles/Jolliffe (1989).pdf:PDF;:Articles/Jolliffe (1989).pdf:PDF},
+  publisher = {Wiley Online Library},
+}
+
+@Article{Vines2000,
+  author    = {S. K. Vines},
+  title     = {Simple principal components},
+  journal   = {Journal of the Royal Statistical Society: Series C (Applied Statistics)},
+  year      = {2000},
+  volume    = {49},
+  number    = {4},
+  pages     = {441--451},
+  month     = {jan},
+  doi       = {10.1111/1467-9876.00204},
+  file      = {:Articles/Vines (2000).pdf:PDF},
+  publisher = {Wiley},
+}
+
+@Article{Cadima1995,
+  author    = {Jorge Cadima and Ian T. Jolliffe},
+  title     = {Loading and correlations in the interpretation of principle compenents},
+  journal   = {Journal of Applied Statistics},
+  year      = {1995},
+  volume    = {22},
+  number    = {2},
+  pages     = {203--214},
+  month     = {jan},
+  doi       = {10.1080/757584614},
+  file      = {:Articles/Cadima & Jolliffe (1995).pdf:PDF},
+  publisher = {Informa {UK} Limited},
+}
+
+@Article{Jolliffe2003,
+  author    = {Ian T Jolliffe and Nickolay T Trendafilov and Mudassir Uddin},
+  title     = {A Modified Principal Component Technique Based on the {LASSO}},
+  journal   = {Journal of Computational and Graphical Statistics},
+  year      = {2003},
+  volume    = {12},
+  number    = {3},
+  pages     = {531--547},
+  month     = {sep},
+  doi       = {10.1198/1061860032148},
+  file      = {:Articles/Jolliffe et al. (2003).pdf:PDF},
+  publisher = {Informa {UK} Limited},
+}
+
+@Article{Shen2008,
+  author    = {Shen, Haipeng and Huang, Jianhua Z},
+  title     = {Sparse principal component analysis via regularized low rank matrix approximation},
+  journal   = {Journal of multivariate analysis},
+  year      = {2008},
+  volume    = {99},
+  number    = {6},
+  pages     = {1015--1034},
+  file      = {:Articles/Shen & Huang (2008).pdf:PDF},
+  publisher = {Elsevier},
+}
+
+@Article{Journee2010,
+  author  = {Journ{\'e}e, Michel and Nesterov, Yurii and Richt{\'a}rik, Peter and Sepulchre, Rodolphe},
+  title   = {Generalized power method for sparse principal component analysis},
+  journal = {Journal of Machine Learning Research},
+  year    = {2010},
+  volume  = {11},
+  number  = {Feb},
+  pages   = {517--553},
+  file    = {:Articles/Journee (2010).pdf:PDF},
+}
+
+@Misc{Dua2019,
+  author      = {Dua, Dheeru and Graff, Casey},
+  title       = {{UCI} Machine Learning Repository},
+  year        = {2017},
+  file        = {:Data/data.csv:Excel},
+  institution = {University of California, Irvine, School of Information and Computer Sciences},
+  url         = {http://archive.ics.uci.edu/ml},
+}
+
+@Article{Weinstein2013,
+  author    = {Weinstein, John N and Collisson, Eric A and Mills, Gordon B and Shaw, Kenna R Mills and Ozenberger, Brad A and Ellrott, Kyle and Shmulevich, Ilya and Sander, Chris and Stuart, Joshua M and Cancer Genome Atlas Research Network and others},
+  title     = {The cancer genome atlas pan-cancer analysis project},
+  journal   = {Nature genetics},
+  year      = {2013},
+  volume    = {45},
+  number    = {10},
+  pages     = {1113},
+  file      = {:C\:/Users/jpjon/Google Drive/NYU/2 - Spring 2020/DS-GA 1013/Sparse-PCA-Project/Articles/Weinstein et al. (2013).pdf:PDF},
+  publisher = {Nature Publishing Group},
+}
+
+@Article{desarbo2007restricted,
+  author    = {DeSarbo, Wayne S and Hausman, Robert E and Kukitz, Jeffrey M},
+  title     = {Restricted principal components analysis for marketing research},
+  journal   = {Journal of Modelling in Management},
+  year      = {2007},
+  file      = {:C\:/Users/jpjon/Google Drive/NYU/2 - Spring 2020/DS-GA 1013/Sparse-PCA-Project/Articles/DeSabro et al. (2007).pdf:PDF},
+  publisher = {Emerald Group Publishing Limited},
+}
+
+@Book{jackson2005user,
+  title     = {A user's guide to principal components},
+  publisher = {John Wiley \& Sons},
+  year      = {2005},
+  author    = {Jackson, J Edward},
+  volume    = {587},
+  file      = {:C\:/Users/jpjon/Google Drive/NYU/2 - Spring 2020/DS-GA 1013/Sparse-PCA-Project/Articles/Jackson (1991).pdf:PDF},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

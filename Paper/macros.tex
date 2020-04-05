@@ -1,0 +1,230 @@
+%% Probability operators and functions
+%
+% \def \P{\mathrm{P}}
+\def \P{\mathrm{P}}
+\def \E{\mathrm{E}}
+\def \Var{\mathrm{Var}}
+\let\var\Var
+\def \Cov {\mathrm{Cov}} \let\cov\Cov
+\def \Corr {\mathrm{Corr}}
+\def \MSE {\mathrm{MSE}} \let\mse\MSE
+\def \sgn {\mathrm{sgn}}
+\def \R {\mathbb{R}}
+\def \C {\mathbb{C}}
+\def \N {\mathbb{N}}
+\def \Z {\mathbb{Z}}
+\def \cV {\mathcal{V}}
+\def \cS {\mathcal{S}}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{ #1}}
+\newcommand{\fuchsia}[1]{\textcolor{RoyalPurple}{ #1}}
+\DeclareMathOperator{\Norm}{\mathcal{N}}
+
+%
+%% Probability distributions
+%
+%\def \Bern    {\mathrm{Bern}}
+%\def \Binom   {\mathrm{Binom}}
+%\def \Exp     {\mathrm{Exp}}
+%\def \Geom    {\mathrm{Geom}}
+%\def \Norm    {\mathcal{N}}
+%\def \Poisson {\mathrm{Poisson}}
+%\def \Unif    {\mathrm {U}}
+%
+\newcommand{\bdb}[1]{\textcolor{red}{#1}}
+
+\newcommand{\ml}[1]{\mathcal{ #1 } }
+\newcommand{\wh}[1]{\widehat{ #1 } }
+\newcommand{\wt}[1]{\widetilde{ #1 } }
+\newcommand{\conj}[1]{\overline{ #1 } }
+\newcommand{\rnd}[1]{\tilde{ #1 } }
+\newcommand{\rv}[1]{ \rnd{ #1}  }
+\newcommand{\rx}{\rnd{ x}  }
+\newcommand{\ry}{\rnd{ y}  }
+\newcommand{\ra}{\rnd{ a}  }
+\newcommand{\rb}{\rnd{ b}  }
+\newcommand{\rz}{\rnd{ z}  }
+\newcommand{\rpc}{\widetilde{ pc}  }
+\newcommand{\rndvec}[1]{\vec{\rnd{#1}}}
+
+
+\def \cnd {\, | \,}
+\def \Id { I }
+\def \J {\mathbf{1}\mathbf{1}^T}
+
+\newcommand{\op}[1]{\operatorname{#1}}
+\newcommand{\setdef}[2]{ := \keys{ #1 \; | \; #2 } }
+\newcommand{\set}[2]{ \keys{ #1 \; | \; #2 } }
+\newcommand{\sign}[1]{\op{sign}\left( #1 \right) }
+\newcommand{\trace}[1]{\op{tr}\left( #1 \right) }
+\newcommand{\tr}[1]{\op{tr}\left( #1 \right) }
+\newcommand{\inv}[1]{\left( #1 \right)^{-1} }
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\sabs}[1]{| #1 |}
+\newcommand{\keys}[1]{\left\{ #1 \right\}}
+\newcommand{\sqbr}[1]{\left[ #1 \right]}
+\newcommand{\sbrac}[1]{ ( #1 ) }
+\newcommand{\brac}[1]{\left( #1 \right) }
+\newcommand{\bbrac}[1]{\big( #1 \big) }
+\newcommand{\Bbrac}[1]{\Big( #1 \Big)}
+\newcommand{\BBbrac}[1]{\BIG( #1 \Big)}
+\newcommand{\MAT}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\sMAT}[1]{\left(\begin{smallmatrix} #1 \end{smallmatrix}\right)}
+\newcommand{\sMATn}[1]{\begin{smallmatrix} #1 \end{smallmatrix}}
+\newcommand{\PROD}[2]{\left \langle #1, #2\right \rangle}
+\newcommand{\PRODs}[2]{\langle #1, #2 \rangle}
+\newcommand{\der}[2]{\frac{\text{d}#2}{\text{d}#1}}
+\newcommand{\pder}[2]{\frac{\partial#2}{\partial#1}}
+\newcommand{\derTwo}[2]{\frac{\text{d}^2#2}{\text{d}#1^2}}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\Imag}[1]{\op{Im}\brac{ #1 }}
+\newcommand{\Real}[1]{\op{Re}\brac{ #1 }}
+\newcommand{\norm}[1]{\left|\left| #1 \right|\right| }
+\newcommand{\norms}[1]{ \| #1 \|  }
+\newcommand{\normProd}[1]{\left|\left| #1 \right|\right| _{\PROD{\cdot}{\cdot}} }
+\newcommand{\normTwo}[1]{\left|\left| #1 \right|\right| _{2} }
+\newcommand{\normTwos}[1]{ \| #1  \| _{2} }
+\newcommand{\normZero}[1]{\left|\left| #1 \right|\right| _{0} }
+\newcommand{\normTV}[1]{\left|\left| #1 \right|\right|  _{ \op{TV}  } }% _{\op{c} \ell_1} }
+\newcommand{\normOne}[1]{\left|\left| #1 \right|\right| _{1} }
+\newcommand{\normOnes}[1]{\| #1 \| _{1} }
+\newcommand{\normOneTwo}[1]{\left|\left| #1 \right|\right| _{1,2} }
+\newcommand{\normF}[1]{\left|\left| #1 \right|\right| _{\op{F}} }
+\newcommand{\normLTwo}[1]{\left|\left| #1 \right|\right| _{\ml{L}_2} }
+\newcommand{\normNuc}[1]{\left|\left| #1 \right|\right| _{\ast} }
+\newcommand{\normOp}[1]{\left|\left| #1 \right|\right|  }
+\newcommand{\normInf}[1]{\left|\left| #1 \right|\right| _{\infty}  }
+\newcommand{\proj}[1]{\mathcal{P}_{#1} \, }
+\newcommand{\diff}[1]{ \, \text{d}#1 }
+\newcommand{\vc}[1]{\boldsymbol{\vec{#1}}}
+\newcommand{\rc}[1]{\boldsymbol{#1}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vz}{\vec{z}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vb}{\vec{\beta}}
+\newcommand{\va}{\vec{\alpha}}
+\newcommand{\vaa}{\vec{a}}
+\newcommand{\vbb}{\vec{b}}
+\newcommand{\vg}{\vec{g}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vh}{\vec{h}}
+\newcommand{\vnu}{\vec{\nu}}
+\newcommand{\rvnu}{\vc{\nu}}
+\newcommand{\vbeta}{\vec{\beta}}
+\newcommand{\valpha}{\vec{\alpha}}
+\newcommand{\vgamma}{\vec{\gamma}}
+\newcommand{\veta}{\vec{\eta}}
+\newcommand{\rw}{\rnd{w}}
+\newcommand{\rvv}{\rndvec{v}}
+\newcommand{\rvw}{\rndvec{w}}
+\newcommand{\rvx}{\rndvec{x}}
+\newcommand{\rvy}{\rndvec{y}}
+\newcommand{\rvz}{\rndvec{z}}
+\newcommand{\rvX}{\rndvec{X}}
+
+\newtheorem{theorem}{Theorem}[section]
+% \declaretheorem[style=plain,qed=$\square$]{theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{algorithm}[theorem]{Algorithm}
+
+% \theoremstyle{definition}
+%\newtheorem{example}[proof]{Example}
+%\declaretheorem[style=definition,qed=$\triangle$,sibling=definition]{example}
+%\declaretheorem[style=definition,qed=$\bigcirc$,sibling=definition]{application}
+
+%
+%% Typographic tweaks and miscellaneous
+%\newcommand{\sfrac}[2]{\mbox{\small$\displaystyle\frac{#1}{#2}$}}
+%\newcommand{\suchthat}{\kern0.1em{:}\kern0.3em}
+%\newcommand{\qqquad}{\kern3em}
+%\newcommand{\cond}{\,|\,}
+%\def\Matlab{\textsc{Matlab}}
+%\newcommand{\displayskip}[1]{\abovedisplayskip #1\belowdisplayskip #1}
+%\newcommand{\term}[1]{\emph{#1}}
+%\renewcommand{\implies}{\;\Rightarrow\;}
+
+% mathcal
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cB}{\mathcal{B}}
+
+% Transpose 
+\def\sT{{\sf T}}
+\def\deg{{\rm deg}}
+
+% Trace and Variance
+\def\Tr{{{\rm Tr}}}
+\def\Var{{{\rm Var}}}
+\def\Cov{{{\rm Cov}}}
+
+
+\def\eps{{\varepsilon}}
+
+% Linear algebra
+\def\Span{{{\rm Span}}}
+\def\dim{{{\rm dim}}}
+\def\Ker{{{\rm Ker}}}
+\def\Im{{{\rm Im}}}
+\def\Id{{{\rm Id}}}
+\def\rank{{{\rm rank}}}
+\def\Sp{{{\rm Sp}}}
+\def\Diag{{{\rm Diag}}}
+
+% Mean-square errors
+\def\MMSE{{{\rm MMSE}}}
+\def\MSE{{{\rm MSE}}}
+\def\DMSE{{{\rm DMSE}}}
+\def\mmse{{{\rm mmse}}}
+
+% Probability
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\iid}{\overset{\text{\tiny i.i.d.}}{\sim}}
+\def\Dtv{\text{D}_{\text{\scriptsize TV}}}
+\def\Dkl{\text{D}_{\text{\scriptsize KL}}}
+
+% Usual laws
+\def\Poi{\text{Poi}}
+\def\Pois{\text{Pois}}
+\def\Bin{\text{Bin}}
+\def\Ber{\text{Ber}}
+\def\Unif{\text{Unif}}
+
+% Double brackets
+\def\llbracket{[\hspace{-.10em} [ }
+\def\rrbracket{ ] \hspace{-.10em}] }
+
+\def\1{\mathds{1}}
+
+% Math-bold
+\newcommand{\bbf}[1]{\mathbf{#1}}
+
+% hat
+\newcommand{\what}[1]{\widehat{#1}}
+
+% widebar
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{<-> mathx10}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathAccent{\widebar}{0}{mathx}{"73}
+
+% def eq
+\newcommand{\defeq}{\overset{\rm def}{=}}
+
+% Frobenius norm
+\newcommand{\frob}[1]{\langle #1 \rangle_F }
+
+% Vectorized matrix
+\def\vect{{\rm vec}}

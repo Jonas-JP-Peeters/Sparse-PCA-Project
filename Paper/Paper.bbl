@@ -1,0 +1,29 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Vines%
+}{%
+Vines%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+Vines2000}
+\APACinsertmetastar {%
+Vines2000}%
+\begin{APACrefauthors}%
+Vines, S\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simple principal components} {Simple principal
+  components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series C
+  (Applied Statistics)}{49}{4}{441--451}.
+\newblock
+\begin{APACrefDOI} \doi{10.1111/1467-9876.00204} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

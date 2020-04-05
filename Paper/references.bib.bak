@@ -131,6 +131,7 @@
   author      = {Dua, Dheeru and Graff, Casey},
   title       = {{UCI} Machine Learning Repository},
   year        = {2017},
+  file        = {:Data/data.csv:Excel},
   institution = {University of California, Irvine, School of Information and Computer Sciences},
   url         = {http://archive.ics.uci.edu/ml},
 }
@@ -144,6 +145,15 @@
   number    = {10},
   pages     = {1113},
   publisher = {Nature Publishing Group},
+}
+
+@Article{desarbo2007restricted,
+  author    = {DeSarbo, Wayne S and Hausman, Robert E and Kukitz, Jeffrey M},
+  title     = {Restricted principal components analysis for marketing research},
+  journal   = {Journal of Modelling in Management},
+  year      = {2007},
+  file      = {:C\:/Users/jpjon/Google Drive/NYU/2 - Spring 2020/DS-GA 1013/Sparse-PCA-Project/Articles/DeSabro et al. (2007).pdf:PDF},
+  publisher = {Emerald Group Publishing Limited},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

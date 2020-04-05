@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  1 MAR 2020 17:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.10)  4 APR 2020 18:20
 entering extended mode
 **./Proposal.tex
 (Proposal.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
@@ -23,14 +23,14 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 ) ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
 y"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
 )
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
-Package: babel 2020/02/14 3.40 The Babel package
+Package: babel 2020/02/28 3.41 The Babel package
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def
 "
-File: switch.def 2020/02/14 3.40 Babel switching mechanism
+File: switch.def 2020/02/28 3.41 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
@@ -44,7 +44,7 @@ ish.ldf"
 Language: english 2017/06/06 v3.3r English support from the babel system
 
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
-File: babel.def 2020/02/14 3.40 Babel common definitions
+File: babel.def 2020/02/28 3.41 Babel common definitions
 \babel@savecnt=\count175
 \U@D=\dimen135
 
@@ -74,7 +74,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
+\@emptytoks=\toks17
 \ex@=\dimen136
 ))
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
@@ -106,21 +106,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip16
 \c@parentequation=\count184
 \dspbrk@lvl=\count185
-\tag@help=\toks17
+\tag@help=\toks18
 \row@=\count186
 \column@=\count187
 \maxfields@=\count188
-\andhelp@=\toks18
+\andhelp@=\toks19
 \eqnshift@=\dimen139
 \alignsep@=\dimen140
 \tagshift@=\dimen141
 \tagwidth@=\dimen142
 \totwidth@=\dimen143
 \lineht@=\dimen144
-\@envbody=\toks19
+\@envbody=\toks20
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -144,7 +144,7 @@ Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks22
 )
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
 sty"
@@ -183,34 +183,34 @@ Package: ntheorem 2011/08/15 1.33
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\theorem@style=\toks22
-\theorem@@style=\toks23
-\theorembodyfont=\toks24
-\theoremnumbering=\toks25
+\theorem@style=\toks23
+\theorem@@style=\toks24
+\theorembodyfont=\toks25
+\theoremnumbering=\toks26
 \theorempreskipamount=\skip57
 \theorempostskipamount=\skip58
 \theoremframepreskipamount=\skip59
 \theoremframepostskipamount=\skip60
 \theoreminframepreskipamount=\skip61
 \theoreminframepostskipamount=\skip62
-\theorem@preskip=\toks26
-\theorem@postskip=\toks27
-\theorem@framepreskip=\toks28
-\theorem@framepostskip=\toks29
-\theorem@inframepreskip=\toks30
-\theorem@inframepostskip=\toks31
+\theorem@preskip=\toks27
+\theorem@postskip=\toks28
+\theorem@framepreskip=\toks29
+\theorem@framepostskip=\toks30
+\theorem@inframepreskip=\toks31
+\theorem@inframepostskip=\toks32
 \theoremindent=\dimen147
 \theorem@indent=\dimen148
 \theoremrightindent=\dimen149
 \theorem@rightindent=\dimen150
-\theoremheaderfont=\toks32
-\theoremseparator=\toks33
-\theoremprework=\toks34
-\theorempostwork=\toks35
-\theoremsymbol=\toks36
-\qedsymbol=\toks37
-\theoremkeyword=\toks38
-\qedsymbol=\toks39
+\theoremheaderfont=\toks33
+\theoremseparator=\toks34
+\theoremprework=\toks35
+\theorempostwork=\toks36
+\theoremsymbol=\toks37
+\qedsymbol=\toks38
+\theoremkeyword=\toks39
+\qedsymbol=\toks40
 \thm@topsep=\skip63
 \thm@topsepadd=\skip64
 )
@@ -225,7 +225,7 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
 "
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count191
 \Gm@cntv=\count192
@@ -238,7 +238,7 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layoutheight=\dimen156
 \Gm@layouthoffset=\dimen157
 \Gm@layoutvoffset=\dimen158
-\Gm@dimlist=\toks40
+\Gm@dimlist=\toks41
 
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 cfg"))
@@ -260,44 +260,96 @@ s
 \f@nch@O@erf=\skip71
 \f@nch@O@olf=\skip72
 \f@nch@O@orf=\skip73
+) (macros.tex
+\c@theorem=\count194
+
+! Undefined control sequence.
+l.141 \declaretheorem
+                     [style=definition,qed=$\triangle$,sibling=definition]{e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 \declaretheorem[
+                      style=definition,qed=$\triangle$,sibling=definition]{e...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 141
+.
+("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 141
+.
+("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+! Undefined control sequence.
+l.142 \declaretheorem
+                     [style=definition,qed=$\bigcirc$,sibling=definition]{ap...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (121.0567pt too wide) in paragraph at lines 141--143
+[]\OT1/cmr/m/n/10 [style=definition,qed=$\OMS/cmsy/m/n/10 4$\OT1/cmr/m/n/10 ,si
+bling=definition]example [style=definition,qed=$\OMS/cmsy/m/n/10 $\OT1/cmr/m/n
+/10 ,sibling=definition]application 
+ []
+
+\symmathx=\mathgroup6
 )
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdfmode.def"
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count194
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count195
 \l__pdf_internal_box=\box47
 ) (Proposal.aux)
 \openout1 = `Proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count195
+\scratchcounter=\count196
 \scratchdimen=\dimen159
 \scratchbox=\box48
-\nofMPsegments=\count196
-\nofMParguments=\count197
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count198
+\nofMPsegments=\count197
+\nofMParguments=\count198
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count199
 \MPscratchDim=\dimen160
-\MPnumerator=\count199
-\makeMPintoPDFobject=\count266
-\everyMPtoPDFconversion=\toks42
+\MPnumerator=\count266
+\makeMPintoPDFobject=\count267
+\everyMPtoPDFconversion=\toks43
 )
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -305,7 +357,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@maskedRefs=\count267
+\c@maskedRefs=\count268
 
 ("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/apacite\english.ap
 c"
@@ -347,59 +399,22 @@ LaTeX Info: Redefining \BHBI on input line 130.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+! I can't write on file `Proposal.pdf'.
+Please type another file name for output
+! Emergency stop.
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.34 \maketitle
+               
+*** (job aborted, file error in nonstop mode)
 
-("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
-
-("C:\Users\jpjon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
-
-[1
-
-{C:/Users/jpjon/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Proposal.bbl)
-\tf@thm=\write3
-\openout3 = `Proposal.thm'.
-
- [2] (Proposal.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 4366 strings out of 481522
- 59952 string characters out of 2912273
- 316942 words of memory out of 3000000
- 19565 multiletter control sequences out of 15000+200000
- 540755 words of font info for 57 fonts, out of 3000000 for 9000
+ 4548 strings out of 480900
+ 61277 string characters out of 2898321
+ 319465 words of memory out of 3000000
+ 20390 multiletter control sequences out of 15000+200000
+ 534037 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,10n,45p,766b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/jpjon/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jpjon/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpjon/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jpjon/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
-s/jpjon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
-pfb><C:/Users/jpjon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><C:/Users/jpjon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb><C:/Users/jpjon/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jpjon/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jpjon/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jpjon/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:
-/Users/jpjon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb>
-Output written on Proposal.pdf (2 pages, 157000 bytes).
-PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 30i,10n,45p,227b,207s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
