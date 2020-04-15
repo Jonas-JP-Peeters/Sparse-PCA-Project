@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{upgreek}
 \usepackage{apacite}
 \usepackage{ntheorem}
 \newtheorem{hyp}{Hypothesis}
@@ -44,35 +45,21 @@
 \item SPCA
 \end{enumerate}
 \section*{Simple Principal Components}
-\subsection*{Notes}
-Vines (2000) generalized this approach without restricting the integer set solution using a sequence of simplicity preserving transformations. Each transformation chooses a pair of vectors and rotates them orthogonally in such a way that the variance associated with the currently higher variance component of the pair is increased at the expense of the lower variance component
-\\\\
-This method what introduced by Vines \citeyear{Vines2000}. We transform the set of orthogonal axes. Essentially we will be orthogonally rotating and rescaling two orthogonal vectors $d_1$ and $d_2$. In general we can write an orthogonal rotation as $f_1 = Pd_1$ where
+Vines \citeyear{Vines2000} introduced the concept of simple principal component by restricting the magnitude of the loadings to integers such as $-1$, $0$ and $1$. This approached is based on the work for Hausman \citeyear{Hausman1982} who introduced a integer programming solution for assembling principal components using integers from a finite set. Each element is determined sequentially as to optimize the variance explained by each component. The problem with this method is that it rarely results in orthogonality over the components.\\
+\\
+Since it is hard to simplify principal components once they are calculated, Vines describes an alternative approach to obtaining simple components using an ortho-gonality preserving transformation on a pair of components. For each transformation of a pair of components, the variance of the data in the direction of one component is maximized while the variance in the other direction is minimized. This transformation is applied to a combination of principal components that has a high covariance. After this transformation, we exclude this pair of components for further transformations until all sensible transformations were made with the remaining components.\\
+\\
+During the "simplicity preserving transformation" introduced by Vines \citeyear{Vines2000}, we essentially orthogonally rotate and rescale two existing components $d_1$ and $d_2$. In general we can write an orthogonal rotation as $(f_1,f_2) = P(d_1,d_2)$ 
 \begin{equation}
 P=\begin{bmatrix}
 1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
 \end{bmatrix}
 \end{equation}
-The new variance-covariance matrix $V^*$ of the rotated data can be found as $V^*=P^TVP$ where $V$ is the variance-covariance matrix of the data before rotation. 
-\begin{align*}
 V=\begin{bmatrix}
 v_{11} & v_{12}\\v_{12} & v_{22}
-\end{bmatrix}\quad \text{and}\quad V^* &= P^TVP=\begin{bmatrix}
-1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
-\end{bmatrix}^T\begin{bmatrix}
-v_{11} & v_{12}\\v_{12} & v_{22}
-\end{bmatrix}\begin{bmatrix}
-1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
-\end{bmatrix}\\
-&= \begin{bmatrix}
-h
-\end{bmatrix}
-\end{align*}
-The variance in the direction $f_1$ can be found as follows:
-\begin{equation}
-\Var(Xf_1)=f_1^TVf_1=(Pd_1)^TVPd_1=d_1^TV^*d_1
-\end{equation}
+\end{bmatrix}\quad \text{and}\quad V^* &= P^TVP
 
+\\
 \pagebreak
 \bibliographystyle{apacite}
 \bibliography{references}

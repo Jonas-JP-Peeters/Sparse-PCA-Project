@@ -1,0 +1,29 @@
+\begin{equation}
+P=\begin{bmatrix}
+1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
+\end{bmatrix}
+\end{equation}
+The new variance-covariance matrix $V^*$ of the rotated data can be found as $V^*=P^TVP$ where $V$ is the variance-covariance matrix of the data before rotation. 
+\begin{align*}
+V=\begin{bmatrix}
+v_{11} & v_{12}\\v_{12} & v_{22}
+\end{bmatrix}\quad \text{and}\quad V^* &= P^TVP=\begin{bmatrix}
+1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
+\end{bmatrix}^T\begin{bmatrix}
+v_{11} & v_{12}\\v_{12} & v_{22}
+\end{bmatrix}\begin{bmatrix}
+1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
+\end{bmatrix}
+\end{align*}
+The variance in the direction $f_1$ can be found as follows:
+\begin{equation}
+\Var(Xf_1)=f_1^TVf_1=(Pd_1)^TVPd_1=d_1^TV^*d_1
+\end{equation}
+essentially we want to find a $\beta^*$ such that the variance $\upnu$ in the direction of the new direction $f_1$ is maximized.
+\begin{equation*}
+\upnu=\frac{\|d_1\|_2^2\upnu_{11}+2\beta\|d_1\|\|d_2\|\upnu_{12}+\beta^2\|d_2\|^2\upnu_{22}}{\|d_1\|^2+\beta^2\|d_2\|^2}
+\end{equation*}
+for which we find that $\upnu$ is maximal if:
+\begin{equation*}
+\beta^*=\frac{-\|d_1\|\|d_2\|(\upnu_{11}-\upnu_{22})+\sqrt{\|d_1\|^2\|d_2\|^2(\upnu_{11}-\upnu_{22})^2+4\|d_1\|^2\|d_2\|^2\upnu_{12}^2}}{2\|d_2\|^2\upnu_{12}}
+\end{equation*}
