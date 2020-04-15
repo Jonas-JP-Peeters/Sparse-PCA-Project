@@ -44,20 +44,55 @@
 \item SCoTLASS
 \item SPCA
 \end{enumerate}
+
+\section*{Introduction}
+
+Principal component analysis (PCA) is a popular dimension-reduction technique that has wide applications across many fields. The goal of PCA is to reduce the dimension of the data while preserving as much variance as possible. PCA does this by computing orthogonal linear combinations of the original variables, called the principal components (PCs), such that the variance along these components are maximized.  The resulting PCs are ordered from highest variance to lowest variance, and thus the first few principal components will retain the most variance in the data.\\
+\\
+One major limitation of PCA is that the resulting linear combinations of the original $p$ variables are difficult to interpret. This is due to the fact that, in most cases, the loadings of the resulting PCs are nonzero. This is particularly challenging when the number of variables $p$ is much larger than the number of examples $n$ (commonly called “High Dimension, Low Sample Size” data, or HDLSS), which is the case for many modern data sets. Consequently, much effort has gone into developing methods of approximating PCs with fewer than the $p$ original variables.\\
+\\
+In this paper, we will explore several sparse PCA methods that have been developed over the past few decades and discuss the benefits and drawbacks of each method. We will evaluate each method on a gene expression cancer RNA-Seq data set compiled by Samuele Fiorini at the University of Genoa \cite{Dua2019}.\\
+\\
+\section*{State of the Art}
+
+Initially, several simple methods of producing interpretable PCs were developed in the 1990s and early 2000s.  Vines introduced a method of building simple PCs by restricting loadings to be from a small set of integers such as 1, 0 and -1. Another more \textit{ad hoc} way of producing sparse PCs is simple thresholding, as described by Cadima & Joliffe (1995). This approach sets loadings with absolute values below a certain threshold to zero. While both of these methods are relatively easy to implement and are often used in practice, the resulting PCs may be misleading.\\
+\\
+
 \section*{Simple Principal Components}
 Vines \citeyear{Vines2000} introduced the concept of simple principal component by restricting the magnitude of the loadings to integers such as $-1$, $0$ and $1$. This approached is based on the work for Hausman \citeyear{Hausman1982} who introduced a integer programming solution for assembling principal components using integers from a finite set. Each element is determined sequentially as to optimize the variance explained by each component. The problem with this method is that it rarely results in orthogonality over the components.\\
 \\
-Since it is hard to simplify principal components once they are calculated, Vines describes an alternative approach to obtaining simple components using an ortho-gonality preserving transformation on a pair of components. For each transformation of a pair of components, the variance of the data in the direction of one component is maximized while the variance in the other direction is minimized. This transformation is applied to a combination of principal components that has a high covariance. After this transformation, we exclude this pair of components for further transformations until all sensible transformations were made with the remaining components.\\
+Since it is hard to simplify principal components once they are calculated, Vines describes an alternative approach to obtaining simple components using an ortho-gonality preserving transformation on a pair of components. For each transformation of a pair of components, the variance of the data in the direction of one component is maximized while the variance in the other direction is minimized. This transformation is applied to a combination of principal components that has a high covariance. After this transformation, we exclude this pair of components for further transformations until all sensible transformations were made with the remaining components. We will describe the algorithm in the following paragraphs.\\
 \\
-During the "simplicity preserving transformation" introduced by Vines \citeyear{Vines2000}, we essentially orthogonally rotate and rescale two existing components $d_1$ and $d_2$. In general we can write an orthogonal rotation as $(f_1,f_2) = P(d_1,d_2)$ 
+For a data matrix $X\in\mathbb{R}^{N\times D}$e need to initialize $N$ principal components of length $D$ that are orthogonal to one another and consist out of integers. While does not propose initial components, we opt for a matrix $U$ constructed from [CONTINUE]. First, we start by calculating the variances and covariances of the data in the directions of all of our components. Secondly, we transform the two principal components with the highest covariance update them. These components are excluded from consideration until all reasonable transformations with other components are completed.\\
+\\
+Two directions are transformed using the "simplicity preserving transformation" introduced by Vines \citeyear{Vines2000}. Essentially the transformation orthogonally rotates and rescales two existing components $d_1$ and $d_2$. In general we can write this orthogonal rotation as $(f_1,f_2) = P(d_1,d_2)$ 
 \begin{equation}
 P=\begin{bmatrix}
 1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
 \end{bmatrix}
 \end{equation}
-V=\begin{bmatrix}
-v_{11} & v_{12}\\v_{12} & v_{22}
-\end{bmatrix}\quad \text{and}\quad V^* &= P^TVP
+Similarly the covariance matrix $V^*$ of $f_1$ and $f_2$ can be written as the transformed covariance matrix $V$ of  $d_1$ and $d_2$:\footnote{Where $\Sigma$ is the covariance matrix of the data.}
+\begin{equation}
+V^* &= P^TVP\quad\text{with}\quad V = \begin{bmatrix}-& d_1 &-\\-&d_2&-\end{bmatrix}\Sigma\begin{bmatrix}\mid & \mid\\d_1^T & d_2^T\\\mid & \mid\end{bmatrix}
+\end{equation}
+When want this transformation $P(\beta)$ to yield a $V^*$ where the variance explained by the first direction $f_1$ is maximized at the cost of the variance explained by the second direction $f_2$ using the parameter $\beta$. Because we want to have integer vector before and after transformation we impose restrictions on $\beta^*$:
+\begin{equation}
+    \beta^*\in\bigg\{i/2^k, 2^k/i: i\in\{-2^k,-2^k+1,\ldots,2^k\}\text{ and }k\in\mathbb{Z}\bigg\}
+\end{equation}
+For example, if $k=1$, then $\beta^*\in\{-1, -1/2, 0, 1/2, 1\}$. Using this $\beta^*$ we retrieve the following new directions:
+\begin{equation}
+    \text{For }|\beta^*|\leq 1:\ \begin{cases}
+    f_1 = 2^kd_1 + 2^k\beta^*d_2\\
+    f_2 = 2^k\beta^*\|d_2\|^2-2^k\|d_1\|^2d_2
+    \end{cases}
+\end{equation}
+\begin{equation}
+    \text{For }|\beta^*|> 1:\ \begin{cases}
+    f_1 = 2^kd_1/\beta^* + 2^kd_2\\
+    f_2 = 2^k\|d_2\|^2-2^k\|d_1\|^2d_2/\beta^*
+    \end{cases}
+\end{equation}
+
 
 \\
 \pagebreak
