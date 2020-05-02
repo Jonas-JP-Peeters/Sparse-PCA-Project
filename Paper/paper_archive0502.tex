@@ -33,12 +33,58 @@
 \pagestyle{plain}
 
 \setlength\parindent{0pt}
-\allowdisplaybreaks
 
 \input{macros}
 
 \begin{document}
 \maketitle
+% \section*{Outline}
+% \begin{enumerate}
+% \item Introduction\\
+% \textit{Jonas: I feel like this part just needs some polishing, but everything we want it to do is already there.}
+% \item State of the Art\\
+% \textit{Overall this part should be kept for name-dropping and connecting the different papers based on their time line, core ideas and findings.}
+% \begin{enumerate}
+%     \item Models
+%     \item Evaluation criteria
+% \end{enumerate}
+% \item Methodology
+% \begin{enumerate}
+%     \item Dataset 
+%     \item Models
+%     \begin{enumerate}
+%         \item Thresholding
+%         \item SCoT
+%         \item SCoTLASS
+%         \item Vines\\
+%         \textit{Jonas: This one should be kept on the down low. We should spend minimal time explaining how it works and the results it yielded.}
+%     \end{enumerate}
+%     \item Evaluation criteria
+%     \begin{enumerate}
+%         \item Cumulative Explained Variance\\
+%         \textit{Tables illustrating CEV versus components}
+%         \item Statistical dispersion of explained variance of each principal components\\
+%         \textit{Gini coefficient for each approach}
+%         \item Metric for sparsity of our principal components\\
+%         \textit{\cite{Hurley2008}, Check graph on conclusion's page. $\kappa_4$ seems to be a good contender since it heavily penalizes non-zero values. Maybe too aggressive, but we have a lot of choice in this paper.}
+%         \item{Algorithm efficiency}
+%     \end{enumerate}
+% \end{enumerate}
+% \item Results
+% \begin{enumerate}
+%     \item Table evaluation metrics per method of several hyper parameters
+%     \item Interpretation of principal component for genes\\
+%     \textit{Jonas: This might be challenging. I suggest we only do this for our "best" performing SPCA method.}
+% \end{enumerate}
+% \item Discussion
+% \begin{enumerate}
+%     \item Zhou's SPCA\\
+%     \textit{If we don't have time to include it in our paper we can refer to it here and the findings in Zhou's paper.}
+%     \item Shortly summarize the advantages and disadvantages or Sparse PCA in general and give a range of possible applications where Sparse PCA might be useful.
+%     \item Enumerate interesting further research that might follow from this paper.
+% \end{enumerate}
+% \end{enumerate}
+
 \section*{Introduction}
 
 Principal component analysis (PCA) is a popular dimension-reduction technique that has wide applications across many fields. The goal of PCA is to reduce the dimension of the data while preserving as much variance as possible. PCA does this by computing orthogonal linear combinations of the original variables, called the principal components (PCs), such that the variance along these components are maximized.  The resulting PCs are ordered from highest variance to lowest variance, and thus the first few principal components will retain the most variance in the data.\\
@@ -61,21 +107,66 @@ This rotation method is two-staged in nature as it requires you to first compute
 \\
 % Vines
 While SCoT yields increased sparsity compared to PCA, the loadings will still be nonzero values. This is an issue that both Hausman \citeyear{Hausman1982} and Vines \citeyear{Vines2000} aim to solve. Hausman introduced an integer programming solution for assembling principal components using integers loadings from a finite set (typically {$-1$,$0$,$1$}). Each element is determined sequentially as to optimize the variance explained by each component.\\ 
+
+%The problem with this method is that it rarely results in orthogonality over the components. Vines introduces a method based on simplicity and orthogonality preserving transformation on a pair of principal components. Essentially this transformation seeks to maximize the variance contained in one of the directions at cost of the other direction. From a starting set of orthogonal simple (integer) directions a pair of directions is selected based the highest absolute covariance. After the transformation this pair is restricted from further transformations until all trivial transformations are completed. The process can then start over eventually resulting in simple components where a few contain the most explained variance. Because of the nature of the transformation, the loadings of the resulting simple PCs will be restricted to a small set of integers such as $1$, $0$ and $-1$.\\
 \\
 % SCoTLASS
 Jolliffe, Trendafilov, and Uddin \citeyear{Jolliffe2003} introduced \textit{SCoTLASS}, which is a modified PCA technique that is based on the least absolute shrinkage and selection operator (or LASSO). Including a LASSO penalty on the loadings helps to induce sparsity, however SCoTLASS is often computationally costly due to its non-convex nature. In addition, hyperparameter tuning for SCoTLASS can be challenging, altogether making SCoTLASS an impractical method for most applications.\\
 
 % SPCA
-One of the later developments is sparse PCA (henceforth SPCA) developed by Zou, Hastie and Tibshirani \citeyear{Zou2006}. Like SCoTLASS, this method incorporates the lasso method, but in addition, they reformulate the PCA in a regression-type optimization problem. This method achieves overall sparse loadings with limited variable overlap between the different principal components. However, unlike SCoT and SCoTLASS, SPCA results in non-orthogonal PCs. In the years following its first publication, SPCA has been improved upon in a plethora of ways \cite{Shen2008, Journee2010}.\\
+One of the later developments is sparse PCA (henceforth SPCA) developed by Zou, Hastie and Tibshirani \citeyear{Zou2006}. Like SCoTLASS, this method incorporates the lasso method, but in addition, they reformulate the PCA in a regression-type optimization problem. This method achieves overall sparse loadings with limited variable overlap between the different principal components. However, unlike SCoT and SCoTLASS, SPCA results in non-orthogonal PCs. In the years following its first publication, SPCA has been improved upon in a plethora of ways \cite{Shen2008, Journee2010}.
+
+%Initially, several simple methods of producing interpretable PCs were developed in the 1990s and early 2000s.  Vines  Another more \textit{ad hoc} way of producing sparse PCs is simple thresholding, as described by Cadima & Joliffe (1995).  While both of these methods are relatively easy to implement and are often used in practice, the resulting PCs may be misleading.\\
 \\
-% After SPCA
-Developments in the field of sparse PCA after the introduction of SPCA mainly build on the spiked covariance model introduced by Johnstone \citeyear{Johnstone2001}. The model assumes that there exist a small number of natural directions that explains most of the variance. It states that the data is drawn from a multi-Gaussian distribution with zero-mean and a covariance matrix given by $I+\theta vv^T$, where $v$ is a unit norm sparse vector. A significant chunk of the literature is devoted to finding this $v$ in high-dimensionality settings where the number of features $p$ is way larger than the number of observations $n$. In 2013, \citeauthor{Ma2013} presents an estimator for Sparse PCA that attains the convergence, but is confronted with computational bottleneck as the algorithm is not computable in polynomial time. Further research focuses on solving this computational problem\footnote{Such as \citeA{Wang2016, Cai2013, Vu2013, Berthet2013}.}.
+
+% \section*{Simple Principal Components}
+% Vines \citeyear{Vines2000} introduced the concept of simple principal component by restricting the magnitude of the loadings to integers such as $-1$, $0$ and $1$. This approached is based on the work for Hausman \citeyear{Hausman1982} who introduced a integer programming solution for assembling principal components using integers from a finite set. Each element is determined sequentially as to optimize the variance explained by each component. The problem with this method is that it rarely results in orthogonality over the components.\\
+% \\
+% Since it is hard to simplify principal components once they are calculated, Vines describes an alternative approach to obtaining simple components using an orthogonality preserving transformation on a pair of components. For each transformation of a pair of components, the variance of the data in the direction of one component is maximized while the variance in the other direction is minimized. This transformation is applied to a combination of principal components that has a high covariance. After this transformation, we exclude this pair of components for further transformations until all sensible transformations were made with the remaining components. We will describe the algorithm in the following paragraphs.\\
+% \\
+% For a data matrix $X\in\mathbb{R}^{N\times D}$e need to initialize $N$ principal components of length $D$ that are orthogonal to one another and consist out of integers. While does not propose initial components, we opt for a matrix $U$ constructed from [CONTINUE]. First, we start by calculating the variances and covariances of the data in the directions of all of our components. Secondly, we transform the two principal components with the highest covariance update them. These components are excluded from consideration until all reasonable transformations with other components are completed.\\
+% \\
+% Two directions are transformed using the "simplicity preserving transformation" introduced by Vines \citeyear{Vines2000}. Essentially the transformation orthogonally rotates and rescales two existing components $d_1$ and $d_2$. In general we can write this orthogonal rotation as $(f_1,f_2) = P(d_1,d_2)$ 
+% \begin{equation}
+% P=\begin{bmatrix}
+% 1 & \|d_2\|_2^2 \beta\\\beta & -\|d_1\|_2^2
+% \end{bmatrix}
+% \end{equation}
+% Similarly the covariance matrix $V^*$ of $f_1$ and $f_2$ can be written as the transformed covariance matrix $V$ of  $d_1$ and $d_2$:\footnote{Where $\Sigma$ is the covariance matrix of the data.}
+% \begin{equation}
+% V^* &= P^TVP\quad\text{with}\quad V = \begin{bmatrix}-& d_1 &-\\-&d_2&-\end{bmatrix}\Sigma\begin{bmatrix}\mid & \mid\\d_1^T & d_2^T\\\mid & \mid\end{bmatrix}
+% \end{equation}
+% When want this transformation $P(\beta)$ to yield a $V^*$ where the variance explained by the first direction $f_1$ is maximized at the cost of the variance explained by the second direction $f_2$ using the parameter $\beta$. Because we want to have integer vector before and after transformation we impose restrictions on $\beta^*$:
+% \begin{equation}
+%     \beta^*\in\bigg\{i/2^k, 2^k/i: i\in\{-2^k,-2^k+1,\ldots,2^k\}\text{ and }k\in\mathbb{Z}\bigg\}
+% \end{equation}
+% For example, if $k=1$, then $\beta^*\in\{-1, -1/2, 0, 1/2, 1\}$. Using this $\beta^*$ we retrieve the following new directions:
+% \begin{equation}
+%     \text{For }|\beta^*|\leq 1:\ \begin{cases}
+%     f_1 = 2^kd_1 + 2^k\beta^*d_2\\
+%     f_2 = 2^k\beta^*\|d_2\|^2-2^k\|d_1\|^2d_2
+%     \end{cases}
+% \end{equation}
+% \begin{equation}
+%     \text{For }|\beta^*|> 1:\ \begin{cases}
+%     f_1 = 2^kd_1/\beta^* + 2^kd_2\\
+%     f_2 = 2^k\|d_2\|^2-2^k\|d_1\|^2d_2/\beta^*
+%     \end{cases}
+% \end{equation}
 
 \section*{Methodology}
 
 %How did you tackle the question? How did you modify existing methods? What datasets did you use? What theoretical tools did you apply? If you deviated from your original plan, explain why.
 
-\subsection*{Simple Component Technique (SCoT)}
+\subsection*{Selected Sparse PCA Methods}
+
+We implemented the following three methods to compare results across different sparse PCA approaches.\\
+\begin{enumerate}[nolistsep]\\
+    \item Simple Component Technique (SCoT)
+    \item Simple Component Technique-LASSO (SCoTLASS)
+    \item Sparse Principal Component Analysis (SPCA)\\
+\end{enumerate}
+
 Let $X \in \mathbb{R}^{n\times p}$ be a data set with $n$ samples and $p$ features and covariance matrix $\Sigma \in \mathbb{R}^{p\times p}$. SCoT seeks to solve the following constrained maximization problem for some regularization parameter $\lambda$ (here, $S(\mathbf{v})$ is the varimax rotation of a vector $\mathbf{v}$):
 
 \begin{equation}
@@ -86,9 +177,8 @@ Let $X \in \mathbb{R}^{n\times p}$ be a data set with $n$ samples and $p$ featur
 \end{aligned}
 \end{equation}
 
-The effect of including the varimax criterion in the SCoT objective function is that the solution seeks to maximize the variance of the squared loadings of the resulting components, driving loadings towards zero or $\pm{1}$. We optimized this SCoT objective using projected gradient ascent.
+The effect of including the varimax criterion in the SCoT objective function is that the solution seeks to maximize the variance of the squared loadings of the resulting components, driving loadings towards zero or $\pm{1}$. We optimized this SCoT objective using projected gradient ascent.\\
 
-\subsection*{Simple Component Technique-LASSO (SCoTLASS)}
 The SCoTLASS method solves the following constrained maximization problem for some regularization parameter $c$:
 
 \begin{equation}
@@ -99,8 +189,8 @@ The SCoTLASS method solves the following constrained maximization problem for so
 \end{aligned}
 \end{equation}
 
-Similarly to SCoT, we used projected gradient ascent to optimize SCoTLASS. However, the SCoTLASS problem involves an L1 penalty constraint, which is not differentiable at every point and thus poses an issue when using projected gradient ascent.\\
-\\
+Similarly to SCoT, we used projected gradient ascent to optimize SCoTLASS. However, the SCoTLASS problem involves an L1 penalty constraint, which is not differentiable at every point and thus poses an issue when using projected gradient ascent. \\
+
 In order to remedy this, we approximated $\lVert \mathbf{v}\rVert_{1}$ as $\mathbf{v^T}\tanh{(\gamma \mathbf{v})}$ for a large $\gamma$ (specifically, $\gamma = 1000$) and reformatted the objective function to include a smooth exterior penalty function $P(x) = 0.5x(1+\tanh{(\gamma x)})$. This procedure is described in detail by Trendafilov \citeyear{Trendafilov2004}. These modifications result in the following adapted SCoTLASS optimization problem for some regularization parameter $t$ and large $\mu$ (we used $\mu = 1000$):
 
 \begin{equation}
@@ -110,8 +200,6 @@ In order to remedy this, we approximated $\lVert \mathbf{v}\rVert_{1}$ as $\math
 \end{aligned}
 \end{equation}
 
-\subsection*{Sparse Principal Components (SPCA)}
-
 SPCA solves the following constrained maximization problem.
 
 \begin{equation}
@@ -120,6 +208,7 @@ SPCA solves the following constrained maximization problem.
 \textrm{s.t.} \quad & \text{FILL IN}\\
 \end{aligned}
 \end{equation}
+
 
 \subsection*{Data Set}
 
@@ -143,6 +232,7 @@ The table below gives a summary of the results of the different sparse PCA metho
 
 [TABLE HERE]\\
 
+
 We find that, as we begin to constrain loadings, both SCoT and SCoTLASS shift the majority of weight from variable 4 to variable 7. Variable 6 also surprisingly jumps from 6th largest weight in PCA to 3rd largest weight. This indicates that there may be more predictive significance in these two variables than regular PCs would suggest. \\
 
 In terms of efficiency and runtime, the SPCA function takes considerably less time to run than SCoT and SCoTLASS. This is largely due to our use of projected gradient ascent in maximizing SCoT and SCoTLASS, which required very small step sizes over many iterations in order to for the algorithms to converge. SCoTLASS is particularly costly to optimize due to the objective function's nonconvexity. This results in possible local maxima, therefore requiring several random starting points to obtain the global maxima. \\
@@ -150,9 +240,6 @@ In terms of efficiency and runtime, the SPCA function takes considerably less ti
 In optimizing SCoT and SCoTLASS, we found is quite challenging to select the best regularization parameter to yield optimal levels of sparsity and explained variance. There is little guidance from relevant literature on selecting regularization parameters for these methods.\\
 
 In addition, as we varied the regularization parameter for SCoT, we also find that there is a sudden increase in loading sparsity, which is accompanied by a sharp decrease in explained variance. At $\lambda$ = 600, SCoT produces a PC 1 with one zero loading and most other loadings between 0.30 and 0.44 and explains approximately 60\% of variance in the data. At $\lambda$ = 650 however, the PC 1 that results has six zero loadings, with one of the three nonzero loadings carrying nearly all the weight with a 0.98 coefficient, and explains only 20\% of variance in the data. This phenomenon makes SCoT an even more challenging model to tune. 
-
-\section*{Discussion}
-%Discussion: What did you find out? Do the results suggest any other interesting questions to explore?
 
 % Pros of SCoT:
 % - PCs are orthogonal
@@ -172,8 +259,14 @@ In addition, as we varied the regularization parameter for SCoT, we also find th
 % Cons of SPCA:
 % - produces non orthogonal pcs
 
+\section*{Discussion}
+
+%Discussion: What did you find out? Do the results suggest any other interesting questions to explore?
+
 % - explore ways to create uncorrelated sparse PCAs
 % - explore other optimization methods for SCoT and SCoTLASS that are more efficient
+
+
 
 % References
 \pagebreak
