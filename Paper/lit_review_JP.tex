@@ -1,0 +1,46 @@
+\documentclass{article}
+\begin{document}
+\section{Jonas literature study 04/22}
+\begin{enumerate}
+    \item \cite{Berthet2013}
+    \begin{enumerate}
+         \item They devise a minimax optimal test that relies on the so-called k-sparse largest eigenvalue of the empirical covariance matrix. It captures the largest amount of empirical variance explained by any k of the original variables. The test tries to detect sparse principal components.
+        \item Classical PCA produces inconsistent estimators of the directions that explain the most variance. \cite{Johnstone2009} (and more in paper)
+        \item Johnstone \citeyear{Johnstone2001} introduces the spiked covariance model which provides a natural setting for statistical problems. The model relies on the assumption that there exists a small number of directions that explain most of the variance. Data is drawn from a multi-Gaussian distribution with mean zero and covariance matrix given by $I + \theta vv^T$, v is a unit norm sparse vector.
+    \end{enumerate}
+    \item \cite{Johnstone2001}
+    \begin{enumerate}
+        \item Too complex don't discuss
+    \end{enumerate}
+    \item \cite{Johnstone2009}
+    \begin{enumerate}
+        \item Some initial reduction in dimensionality is desirable before applying PCA.
+        \item The initial reduction in dimensionality is best achieved by working in a basis in which the signals have a sparse representation.
+        \item Overall too dense to read properly
+    \end{enumerate}
+    \item \cite{Wang2016}
+    \begin{enumerate}
+        \item Sparse PCA is employed to identify a small number foe interpretable directions that represent the data succinctly.
+        \item Regular PCA works well when $n >> p$, but starts faltering when $p > n$ (see also \cite{Johnstone2009}).
+        \item Since the meaningfulness of the components depends on the characteristics of the problem (sample size, dimensionality, sparsity level and signal-to-noise ratio).
+        \item \cite{Ma2013} shows that his estimator for the SPCA attains the minimax rate of convergence over a certain Gaussian class of distributions, provided that the sparsity parameter $k$ is treated as a fixed constant. \cite{Cai2013, Vu2013} allows for $k$ to vary depending on the sample size $n$ of the problem. These papers settle the question of sparse principal component estimation. However they are not computable in polynomial time.
+        \item \cite{Berthet2013} made improvement in this computability problem by testing versus an alternative hypothesis.
+        \item They themselves also try to improve computability.
+    \end{enumerate}
+    \item \cite{Vu2013}
+    \begin{enumerate}
+        \item Study SPCA in high dimensions where $p>>n$ and introduce to complementary notions: row sparsity and column sparsity.
+        \item Problem: whether SPCA methods can optimally estimate the subspace spanned by the leading eigenvectors, that is, the principal subspace of variation.
+        \item \cite{Ma2013} proposed a sparse principal subspace estimator based on iterative thresholding, and derived its rate of convergence under a spiked covariance model.
+        similar to \cite{Birnbaum2013}.
+        \item The use of the spiked covariance model is warranted by two reasons. First of all, it simplifies analyses and enables the exploitation of special properties of the multivariate Gaussian distribution. The second is that it excludes the possibility of the variables having equal variances.
+    \end{enumerate}
+    \item \cite{Witten2009}
+    \begin{enumerate}
+        \item Present a penalized matrix decomposition (PMD) framework for computing a rank-$K$ approximation of a matrix. The matrix $X$ is approximated as $\hat{X}=\sum_{k=1}^K d_k u_k v_k^T$ where $d_k$, $u_k$ and $v_k$ minimize the squared Frobenius norm of $X-\hat{X}$ subject to penalities on $u_k$ and $v_k$. They find that if they apply $\ell_1$-penalities on $v_k$ it yields an efficient algorithm for the SCoTLASS proposal \cite{Jolliffe2003}.
+    \end{enumerate}
+\end{enumerate}
+
+\bibliographystyle{apacite}
+\bibliography{references}
+\end{document}
