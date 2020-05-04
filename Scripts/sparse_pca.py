@@ -342,7 +342,7 @@ def scotlassGradAsc(sigma, V, reg_param , x0 = 'default',
     return v
 
 def SCoTLASS(X, reg_param, x0 = 'default', alpha = 10**-3,
-             max_iter = 20000, crit = 1e-1000):
+             max_iter = 200000, crit = 1e-1000):
     '''
     function takes
     - X: n x p dataset
@@ -496,7 +496,7 @@ def scotGradAsc(sigma, V, reg_param, x0 = 'default',
     return v
 
 def SCoT(X, reg_param, x0 = 'default', alpha = 10**-3,
-             max_iter = 20000
+             max_iter = 200000
          
          , crit = 1e-1000):
     '''
