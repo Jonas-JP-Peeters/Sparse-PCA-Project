@@ -6,15 +6,16 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{apacite}
 \author{
 	Kho, Lee
 	\and
 	Peeters, Jonas
 }
 \title{Sparse Principal Components Analysis}
-%\setbeamercovered{transparent} 
-%\setbeamertemplate{navigation symbols}{} 
-%\logo{} 
+% \setbeamercovered{transparent} 
+% \setbeamertemplate{navigation symbols}{} 
+% \logo{} 
 \institute{\includegraphics{../Figures/nyu_long_black.png}} 
 \date{\today} 
 \subject{DS-GA 1013} 
@@ -27,25 +28,57 @@
 
 \begin{frame}\frametitle{Introduction}
 \begin{itemize}
-\item 
+    \item PCA is a popular dimension reduction tool with applications across many domains; however, one drawback of the technique is that PCs are usually a linear combination of \textit{all} variables and are thus difficult to interpret
+    \begin{itemize}
+        \item This is especially challenging in high-dimension, low sample size (HDLSS) data sets (i.e. "fat" matrices)
+        \item PCA may also lead to inconsistent results in HDLSS data
+    \end{itemize}
+    \item \textbf{Sparse PCA} methods have been developed in an effort to compute more interpretable PCs with few nonzero loadings
+    \item In our project, we implemented three of these sparse PCA methods and evaluated their results on breast tissue data set
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{State of the Art}
 \begin{itemize}
-\item 
+    \item Simple thresholding, rotation and integer programming methods are sometimes used in practice to obtain sparse PCs, but these methods have been shown to produce non-optimal or even misleading results
+    \item Other sparse PCA techniques such as \textbf{SCoT}, \textbf{SCoTLASS} and \textbf{SPCA} have been developed since the early 2000s that more effectively produce sparse PCs that maximize explained variance
+    \begin{itemize}
+    \item Further adaptations and improvements have been made on these sparse PCA techniques, but they continue to be frequently cited in related literature as core methods
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Methodology}
+\begin{frame}\frametitle{Methodology: Selected Sparse PCA Methods}
+We implemented the \textbf{SCoT}, \textbf{SCoTLASS} and \textbf{SPCA} methods and on a breast tissue measurements data set with n = 106 and p = 9\\
 \begin{itemize}
-\item 
+    \item \textbf{SCoT}: This method maximizes both the regular PCA objective and the \textit{varimax} criterion, which is a sparsity criterion that maximizes the variance of the squared loadings
+    \item \textbf{SCoTLASS}: SCoTLASS induces sparse loadings by maximizing the regular PCA subject to an \textit{L1-norm} constraint
+    \item \textbf{SPCA}: SPCA re-configures the sparse PCA problem into a \textit{regression problem} and uses an \textit{elastic net} constraint to efficiently produce sparse loadings 
+\end{itemize}
+To optimize the SCoT and SCoTLASS objective functions, we used projected gradient ascent
+\begin{itemize}
+    \item Due to the non-differentiable nature of the L1-norm, we approximated the norm with a smooth function (this procedure was outlined by Trendafilov (2004))
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Methodology: Evaluation}
+We evaluated these three sparse PCA methods based on the following three criteria:
+\begin{itemize}
+    \item \textit{Sparsity}: We looked at sparsity in terms of the \textit{gini coefficient}, which is a metric for weight distribution across loadings
+        \begin{itemize}
+            \item The Gini coefficient can take on a value between 0 and 1 inclusive, with 0 indicating minimal sparsity (i.e. all loadings have equal weight) and 1 indicating maximum sparsity (i.e. all weight on one loading)
+        \end{itemize}
+    \item \textit{Explained variance}: We calculated \textit{percentage of explained variance (PEV)} of the sparse PCs that resulted from each method
+    \item \textit{Efficiency and scalability}: For each method, we measured run time on the breast tissue data set assessed the method's suitability for higher dimensional data
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Results}
 \begin{itemize}
-\item 
+\item SPCA proved to be the most efficient and scalable method that we explored
+\begin{itemize}
+    \item Both SCoT and SCoTLASS require hyperparameter selection, which turned out to be fairly tricky and time consuming; in addition, the non-convex nature of the SCoTLASS objective can result in many local maxima, and thus several random initialization points may be necessary to find the global maximum
+\end{itemize}
 \end{itemize}
 \end{frame}
 
