@@ -631,3 +631,14 @@ def LARS_EN(Y, X, reg_param, reg_param1):
     beta = lasso.coef_/np.sqrt(1 + reg_param)
     
     return beta
+
+def Adj_Var(X, PCs):
+    adj_EVs = []
+    X_prior = np.zeros((X.shape[1],X.shape[1]))
+    for i in range(0,len(PCs)):
+        V = np.reshape(np.array([PCs[j] for j in range(i+1)]),(i+1,len(PCs[i])))
+        X_k = X @ V.T @ np.linalg.inv(V @ V.T) @ V
+        adj_EV_k = (np.trace(X_k.T@X_k) - np.trace(X_prior.T @ X_prior))/(X.shape[0]-1)
+        adj_EVs.append(adj_EV_k)
+        X_prior = X_k
+    return np.array(adj_EVs)
