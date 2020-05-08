@@ -8,6 +8,7 @@ from scipy.optimize import minimize
 from scipy.linalg import null_space
 from IPython.display import clear_output
 from sklearn.linear_model import LassoLars
+from sklearn.decomposition import SparsePCA
 import random
 import warnings
 warnings.filterwarnings('ignore')
