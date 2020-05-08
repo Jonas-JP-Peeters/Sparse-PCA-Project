@@ -20,10 +20,10 @@ def gini(array):
     # http://www.statsdirect.com/help/default.htm#nonparametric_methods/gini.htm
     # All values are treated equally, arrays must be 1d:
     array = np.abs(array.flatten())
-    if np.amin(array) < 0:
-        # Values cannot be negative:
-        array -= np.amin(array)
-    # Values cannot be 0:
+#     if np.amin(array) < 0:
+#         # Values cannot be negative:
+#         array -= np.amin(array)
+#     # Values cannot be 0:
     array += 0.0000001
     # Values must be sorted:
     array = np.sort(array)
