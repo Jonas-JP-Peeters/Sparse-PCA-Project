@@ -632,6 +632,13 @@ def LARS_EN(Y, X, reg_param, reg_param1):
     
     return beta
 
+def SPCA(X, reg, reg2):
+    X = StandardScaler().fit_transform(X)
+    transformer = SparsePCA(n_components = 9, alpha = reg, ridge_alpha = reg2)
+    transformer.fit(X)
+    norm_comps = np.array([i/np.linalg.norm(i) for i in transformer.components_])
+    return norm_comps
+
 def Adj_Var(X, PCs):
     adj_EVs = []
     X_prior = np.zeros((X.shape[1],X.shape[1]))
