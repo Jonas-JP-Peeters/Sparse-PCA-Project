@@ -68,23 +68,21 @@ We evaluated these three sparse PCA methods based on the following three criteri
         \begin{itemize}
             \item The Gini coefficient can take on a value between 0 and 1 inclusive, with 0 indicating minimal sparsity (i.e. all loadings have equal weight) and 1 indicating maximum sparsity (i.e. all weight on one loading)
         \end{itemize}
-    \item \textit{Explained variance}: We calculated \textit{percentage of explained variance (PEV)} of the sparse PCs that resulted from each method
+    \item \textit{Explained variance}: We calculated \textit{percentage of explained variance (PEV)} of the sparse PCs that resulted from each method, as well as \textit{concentration of explained variance (CEV)}
     \item \textit{Efficiency and scalability}: For each method, we measured run time on the breast tissue data set assessed the method's suitability for higher dimensional data
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Results}
 \begin{itemize}
+\item SCoT and SCoTLASS yielded more similar PCs than SPCA in terms of the ranking of variable importance
+\begin{itemize}
+    \item At higher regularization, SCoT and SCoTLASS selected variable 7 as most important, while SPCA selected variable 9
+\end{itemize}
 \item SPCA proved to be the most efficient and scalable method that we explored
 \begin{itemize}
     \item Both SCoT and SCoTLASS require hyperparameter selection, which turned out to be fairly tricky and time consuming; in addition, the non-convex nature of the SCoTLASS objective can result in many local maxima, and thus several random initialization points may be necessary to find the global maximum
 \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Discussion}
-\begin{itemize}
-\item 
 \end{itemize}
 \end{frame}
 
