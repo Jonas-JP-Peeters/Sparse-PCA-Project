@@ -282,7 +282,7 @@ def scotlass_grad(sigma, v, reg_param, gamma):
     return (sigma @ v) - 0.5*mu*q*z 
 
 def scotlassGradAsc(sigma, V, reg_param , x0 = 'default', 
-                    alpha = 10**-3, max_iter = 20000, crit = 1e-1000):
+                    alpha = 10**-6, max_iter = 500000, crit = 1e-1000):
     '''
     function takes
     - sigma: p x p covariance matrix
@@ -342,8 +342,8 @@ def scotlassGradAsc(sigma, V, reg_param , x0 = 'default',
     # return loadings array v
     return v
 
-def SCoTLASS(X, reg_param, x0 = 'default', alpha = 10**-3,
-             max_iter = 200000, crit = 1e-1000):
+def SCoTLASS(X, reg_param, x0 = 'default', alpha = 10**-6,
+             max_iter = 500000, crit = 1e-1000):
     '''
     function takes
     - X: n x p dataset
@@ -444,7 +444,7 @@ def scot_obj_grad(sigma, v, reg_param):
     return grad
 
 def scotGradAsc(sigma, V, reg_param, x0 = 'default', 
-                    alpha = 10**-3, max_iter = 20000, crit = 1e-1000):
+                    alpha = 10**-5, max_iter = 500000, crit = 1e-1000):
     '''
     function takes
     - sigma: p x p covariance matrix
@@ -496,10 +496,8 @@ def scotGradAsc(sigma, V, reg_param, x0 = 'default',
     # return loadings array v
     return v
 
-def SCoT(X, reg_param, x0 = 'default', alpha = 10**-3,
-             max_iter = 200000
-         
-         , crit = 1e-1000):
+def SCoT(X, reg_param, x0 = 'default', alpha = 10**-5,
+             max_iter = 500000, crit = 1e-1000):
     '''
     function takes
     - X: n x p dataset
